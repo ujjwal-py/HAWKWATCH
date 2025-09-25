@@ -17,7 +17,7 @@ export default function LoginScreen() {
       if (email && password) {
         // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 1000))
-        router.replace('/(tabs)')
+        router.replace('/(tabs)/live')
       } else {
         Alert.alert('Error', 'Please fill in all fields')
       }
@@ -64,9 +64,9 @@ export default function LoginScreen() {
             </Text>
           </TouchableOpacity>
           
-          <TouchableOpacity onPress={() => router.push('/(auth)/signup')}>
+          <TouchableOpacity onPress={() => router.push('/(auth)/login')}>
             <Text style={styles.linkText}>
-              Don't have an account? <Text style={styles.linkHighlight}>Sign Up</Text>
+              Need help? <Text style={styles.linkHighlight}>Contact Support</Text>
             </Text>
           </TouchableOpacity>
         </View>

@@ -1,7 +1,6 @@
 import { Stack } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import 'react-native-url-polyfill/auto'
-import '../global.css'
 
 export default function RootLayout() {
   return (

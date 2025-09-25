@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Alert, Switch, ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { createClient } from '@supabase/supabase-js'
+import { supabase } from '../../lib/supabase'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { router } from 'expo-router'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
 
 interface UserProfile {
   email: string
@@ -116,7 +111,7 @@ export default function ProfileScreen() {
           onPress: async () => {
             try {
               await supabase.auth.signOut()
-              router.replace('/(auth-pages)/sign-in')
+              router.replace('/(auth)/login')
             } catch (error) {
               console.error('Error signing out:', error)
               Alert.alert('Error', 'Failed to sign out. Please try again.')
