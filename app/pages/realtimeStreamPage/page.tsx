@@ -64,7 +64,7 @@ export default function Page() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const mediaStreamRef = useRef<MediaStream | null>(null)
-  const analysisIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const analysisIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const detectionFrameRef = useRef<number | null>(null)
   const lastDetectionTime = useRef<number>(0)
   const lastFrameTimeRef = useRef<number>(performance.now())
@@ -75,7 +75,7 @@ export default function Page() {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
   const recordedChunksRef = useRef<Blob[]>([])
   const isRecordingRef = useRef<boolean>(false)
-  const durationIntervalRef = useRef<NodeJS.Timeout | null>(null)
+  const durationIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   // -----------------------------
   // 1) Initialize ML Models
