@@ -26,7 +26,7 @@ export async function detectEvents(base64Image: string, transcript: string = '')
             throw new Error("Invalid image data format");
         }
 
-        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
         console.log('Initialized Gemini model');
 
         const imagePart = {
